@@ -9,19 +9,6 @@
     </prerequisites>
 
     <!-- ##################################################################################################### -->
-    <!--
-
-    BUILD NOTES
-
-    Build only the manual of core (or other module), in root pom.xml's current directory (output in ./target/manual/)
-
-        mvn -N clean org.fourthline.lemma:lemma-maven-plugin:manual \
-            -Dmanual.templateFilename=cling-core-manual.xhtml \
-            -Dmanual.manualSourceDirectory=core/src/manual \
-            -Dmanual.testSourceDirectory=core/src/test
-
-    -->
-    <!-- ##################################################################################################### -->
 
     <groupId>org.fourthline.cling</groupId>
     <artifactId>cling</artifactId>
@@ -70,12 +57,6 @@
         </developer>
     </developers>
 
-    <distributionManagement>
-        <repository>
-            <id>4thline.org</id>
-            <url>scpexe://4thline.org/webroot/vhosts/8080/4thline.org/m2/</url>
-        </repository>
-    </distributionManagement>
 
     <!-- ##################################################################################################### -->
 
@@ -84,8 +65,7 @@
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
 
-        <seamless.version>1.1.1</seamless.version>
-        <lemma.version>1.1.1</lemma.version>
+        <seamless.version>1.1.2-SNAPSHOT</seamless.version>
         <testng.version>6.8.21</testng.version>
         <android.version>4.1.1.4</android.version>
         <android.maven.plugin.version>4.1.1</android.maven.plugin.version>
@@ -103,42 +83,12 @@
 
     </properties>
 
-    <!-- ##################################################################################################### -->
-
-    <repositories>
-        <repository>
-            <id>4thline-repo</id>
-            <url>http://4thline.org/m2</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-
-    <pluginRepositories>
-        <pluginRepository>
-            <id>4thline-repo</id>
-            <url>http://4thline.org/m2</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </pluginRepository>
-        <pluginRepository>
-            <id>onejar-maven-plugin.googlecode.com</id>
-            <url>http://onejar-maven-plugin.googlecode.com/svn/mavenrepo</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
-
-    <!-- ##################################################################################################### -->
 
     <build>
 
         <pluginManagement>
             <plugins>
-                
+
                 <!-- Assembly -->
                 <plugin>
                     <artifactId>maven-assembly-plugin</artifactId>
@@ -215,18 +165,6 @@
                     <version>1.4.5</version>
                 </plugin>
 
-                <!-- Manual generation settings -->
-                <plugin>
-                    <groupId>org.fourthline.lemma</groupId>
-                    <artifactId>lemma-maven-plugin</artifactId>
-                    <version>${lemma.version}</version>
-                    <configuration>
-                        <!-- Generate unique identifiers for all citations
-                        TODO: Docs cleanup necessary for this
-                        <processXRefs>false</processXRefs>
-                        -->
-                    </configuration>
-                </plugin>
 
                 <!-- Fixing the versions so Maven stops looking for the latest online... -->
                 <plugin>
