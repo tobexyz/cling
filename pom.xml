@@ -17,10 +17,10 @@
 
     <modules>
         <module>core</module>
-        <module>demo</module>
-        <module>workbench</module>
+        <!--module>demo</module-->
+        <!--module>workbench</module-->
         <module>website</module>
-        <module>distribution</module>
+        <!--module>distribution</module-->
         <module>support</module>
         <module>mediarenderer</module>
     </modules>
@@ -65,7 +65,7 @@
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
 
-        <seamless.version>1.1.2-SNAPSHOT</seamless.version>
+        <seamless.version>1.1.2</seamless.version>
         <testng.version>6.8.21</testng.version>
         <android.version>4.1.1.4</android.version>
         <android.maven.plugin.version>4.1.1</android.maven.plugin.version>
