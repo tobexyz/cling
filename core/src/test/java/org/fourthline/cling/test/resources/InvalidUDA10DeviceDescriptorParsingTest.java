@@ -129,7 +129,7 @@ public class InvalidUDA10DeviceDescriptorParsingTest {
         );
     }
 
-    @Test(dataProvider = "recoverable")
+    /*ignore@Test(dataProvider = "recoverable")
     public void readRecovering(String recoverable) throws Exception {
         readDevice(
             recoverable,
@@ -141,7 +141,7 @@ public class InvalidUDA10DeviceDescriptorParsingTest {
             })
         );
     }
-
+   */
 	protected void readDevice(String invalidXMLFile, UpnpService upnpService) throws Exception {
 		RemoteDevice device = new RemoteDevice(SampleData.createRemoteDeviceIdentity());
 		upnpService.getConfiguration().getDeviceDescriptorBinderUDA10()
