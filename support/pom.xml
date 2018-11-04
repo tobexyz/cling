@@ -41,7 +41,7 @@
             </plugin>
 
             <!-- Prepare Javadoc for distribution packaging -->
-            <plugin>
+            <!--plugin>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <executions>
                     <execution>
@@ -52,7 +52,7 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin-->
 
 
             <!-- Website lifecycle -->
