@@ -819,6 +819,13 @@ public class DIDLParser extends SAXParser {
                         new DIDLObject.Property.UPNP.DVD_REGION_CODE(Integer.valueOf(getCharacters()))
                     );
                 } else if ("originalTrackNumber".equals(localName)) {
+                    int tracknumber = 0;
+                    if (getCharacters().contains("/")){
+                        tracknumber = Integer.valueOf(getCharacters().split("/")[0]);
+                    } else {
+                        tracknumber = Integer.valueOf(getCharacters());
+                    }
+
                     getInstance().addProperty(
                         new DIDLObject.Property.UPNP.ORIGINAL_TRACK_NUMBER(Integer.valueOf(getCharacters()))
                     );
