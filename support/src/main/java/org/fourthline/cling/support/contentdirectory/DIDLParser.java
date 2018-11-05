@@ -827,7 +827,7 @@ public class DIDLParser extends SAXParser {
                     }
 
                     getInstance().addProperty(
-                        new DIDLObject.Property.UPNP.ORIGINAL_TRACK_NUMBER(Integer.valueOf(getCharacters()))
+                        new DIDLObject.Property.UPNP.ORIGINAL_TRACK_NUMBER(tracknumber)
                     );
                 } else if ("userAnnotation".equals(localName)) {
                     getInstance().addProperty(
