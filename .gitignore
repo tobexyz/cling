@@ -8,3 +8,5 @@
 target
 MANIFEST.MF
 out
+demo/android/light/src/android/gen/
+**/pom.xml.versionsBackup
