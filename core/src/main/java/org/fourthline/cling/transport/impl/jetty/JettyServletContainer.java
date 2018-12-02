@@ -163,7 +163,11 @@ public class JettyServletContainer implements ServletContainerAdapter {
 
     protected void resetServer() {
         server = new Server(); // Has its own QueuedThreadPool
+        try {
         server.setGracefulShutdown(1000); // Let's wait a second for ongoing transfers to complete
+        } catch (NoSuchMethodError error){
+           log.info("Jetty server does not implement setGracefulShutdown()");
+        }
     }
 
     /**
