@@ -61,6 +61,14 @@ public class SampleData {
         }
     }
 
+    public static InetAddress getRemoteBaseAddress() {
+        try {
+            return InetAddress.getByName("192.168.0.1");
+        } catch (UnknownHostException ex) {
+            throw new RuntimeException(ex);
+        }
+    }
+
     public static URL getLocalBaseURL() {
         try {
             return new URL("http://127.0.0.1:" + NetworkAddressFactoryImpl.DEFAULT_TCP_HTTP_LISTEN_PORT + "/");
@@ -69,6 +77,13 @@ public class SampleData {
         }
     }
 
+    public static URL getRemoteBaseURL() {
+        try {
+            return new URL("http://192.168.0.1:" + NetworkAddressFactoryImpl.DEFAULT_TCP_HTTP_LISTEN_PORT + "/");
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        }
+    }
     /* ###################################################################################### */
 
     public static DeviceIdentity createLocalDeviceIdentity() {
@@ -169,7 +184,7 @@ public class SampleData {
                 maxAgeSeconds,
                 SampleDeviceRoot.getDeviceDescriptorURL(),
                 null,
-                getLocalBaseAddress()
+                getRemoteBaseAddress()
         );
     }
 
