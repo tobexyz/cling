@@ -102,14 +102,10 @@ public class SampleDeviceRoot extends SampleDevice {
         return URIUtil.createAbsoluteURL(SampleData.getLocalBaseURL(), getDeviceDescriptorURI());
     }
 
-    public static URL getRemoteDeviceDescriptorURL() {
-        return URIUtil.createAbsoluteURL(SampleData.getRemoteBaseURL(), getDeviceDescriptorURI());
-    }
-
     public static void assertMatch(Device a, Device b) {
         assertMatch(a, b, true);
     }
-
+    
     public static void assertMatch(Device a, Device b, boolean checkType) {
         assertTrue(a.isRoot());
         assertDeviceMatch(a, b, checkType);

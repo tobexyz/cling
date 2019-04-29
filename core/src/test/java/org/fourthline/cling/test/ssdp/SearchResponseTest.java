@@ -54,7 +54,7 @@ public class SearchResponseTest {
 
         IncomingSearchResponse msg = createResponseMessage(new STAllHeader());
         msg.getHeaders().add(UpnpHeader.Type.USN, new USNRootDeviceHeader(rd.getIdentity().getUdn()));
-        msg.getHeaders().add(UpnpHeader.Type.LOCATION, new LocationHeader(SampleDeviceRoot.getRemoteDeviceDescriptorURL()));
+        msg.getHeaders().add(UpnpHeader.Type.LOCATION, new LocationHeader(SampleDeviceRoot.getDeviceDescriptorURL()));
         msg.getHeaders().add(UpnpHeader.Type.MAX_AGE, new MaxAgeHeader(rd.getIdentity().getMaxAgeSeconds()));
 
         upnpService.getProtocolFactory().createReceivingAsync(msg).run();
@@ -157,5 +157,5 @@ public class SearchResponseTest {
         return msg;
 
     }
-
+    
 }

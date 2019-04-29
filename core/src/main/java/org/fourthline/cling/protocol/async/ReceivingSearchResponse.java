@@ -85,11 +85,6 @@ public class ReceivingSearchResponse extends ReceivingAsync<IncomingSearchRespon
             return;
         }
 
-         if (rdIdentity.getDescriptorURL().getHost().equals("127.0.0.1")) {
-            log.finer("Ignoring message with localhost URL header: " + getInputMessage());
-            return;
-        }
-
         if (rdIdentity.getMaxAgeSeconds() == null) {
             log.finer("Ignoring message without max-age header: " + getInputMessage());
             return;
